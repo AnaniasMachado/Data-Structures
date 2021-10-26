@@ -126,7 +126,7 @@ void graph_representation(ll_head_t* head) {
     graphptr = fopen("graph.gv", "w");
 
     if (graphptr == NULL) {
-        fprintf(stderr, "Error in the graphptr");
+        fprintf(stderr, "Error in the graphptr\n");
         abort();
     }
 
