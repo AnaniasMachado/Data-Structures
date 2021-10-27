@@ -157,6 +157,7 @@ int main(int argc, char* argv[argc+1]) {
     enqueue(head, 41);
     print_ll(head);
     graph_representation(head);
+    free(head);
     printf("Time taken: %.8fs\n", (double)(clock() - start)/CLOCKS_PER_SEC);
     return EXIT_SUCCESS;
 }
