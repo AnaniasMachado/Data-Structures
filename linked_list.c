@@ -26,6 +26,25 @@ void print_ll(ll_head_t* head) {
     }
 }
 
+/* Free all the linked list nodes */
+void free_ll(ll_head_t* head) {
+    if (head->next == NULL) {
+        free(head);
+        head = NULL;
+    } else {
+        ll_node_t* current = head->next;
+        ll_node_t* tmp;
+        
+        while (current->next) {
+            tmp = current;
+            current = current->next;
+            free(tmp);
+        }
+
+        free(current);
+    }
+}
+
 /* Inserts a new node at the end of the linked list */
 void insert(ll_head_t* head, int val) {
     /* We first verify if the ll is empty, if so then we
